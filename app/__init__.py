@@ -13,7 +13,9 @@ def create_app():
     migrate.init_app(app, db)
 
     from app.controllers.produto_controller import produto_bp
+    from app.controllers.estoque_controller import estoque_bp
     app.register_blueprint(produto_bp)
+    app.register_blueprint(estoque_bp)
     register_error_handlers(app)
 
     from app.models import produto_model
